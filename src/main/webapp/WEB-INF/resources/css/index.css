@@ -1,0 +1,112 @@
+@charset "UTF-8";
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Gill Sans", sans-serif;
+}
+.nav {
+    width: 100%;
+    height: 50px;
+    background-color: aqua;
+    position: fixed;
+    display: block;
+    z-index: 1;
+}
+
+.nav-logo {
+    width: 200px;
+    height: 50px;
+    margin-bottom: 2px;
+    position: absolute;
+}
+.nav-button {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    position: absolute;
+    
+    right: 0;
+}
+.nav-button-login {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    background-color: red;
+    color: aliceblue;
+    text-align: center;
+    text-decoration: none;
+    font-size: large;
+}
+.nav-button-signup {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    text-decoration: none;
+    font-size: large;
+}
+.header {
+    width: 100%;
+    height: 700px;
+    position: relative;
+}
+.header-title {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    top: 50%;
+    left: 40%;
+    color: aliceblue;
+    text-align: center;
+    
+}
+.header-join {
+    width: 220px;
+    height: 50px;
+    background-color: red;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    top: 70%;
+    left: 46%;
+    text-decoration: none;
+    font-size: x-large;
+    color: gold;
+    border-radius: 10px;
+}
+.header-join:hover {
+    background-color: blue;
+}
+.header-img {
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    filter: brightness(50%);
+}
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    position: relative;
+}
+.footer-title {
+    position: absolute;
+    color: white;
+    top: 10%;
+    left: 45%;
+    font-size: 30px;
+}
+.icon-list {
+    position: absolute;
+    top: 30%;
+    left: 48%;
+}
+i {
+    color: aliceblue;
+    font-size: 24px;
+    margin: 10px;
+}
