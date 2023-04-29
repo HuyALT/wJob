@@ -13,8 +13,8 @@
     <div class="nav">
         <img src="<c:url value = '/resources/images/logo.png'/>" alt="" class="nav-logo">
         <div class="nav-button">
-            <a href="#" class="nav-button-login">Sign in</a>
-            <a href="#" class="nav-button-signup">Sign up</a>
+            <a href="#" class="nav-button-login">Đăng nhập</a>
+            <a href="#" class="nav-button-signup">Đăng kí</a>
         </div>
     </div>
     <div class="header">
