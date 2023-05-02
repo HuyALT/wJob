@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ <c:redirect url="/login"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
     <div class="nav">
         <img src="<c:url value = '/resources/images/logo.png'/>" alt="" class="nav-logo">
         <div class="nav-button">
-            <a href="#" class="nav-button-login">Đăng nhập</a>
+            <a href="Login" class="nav-button-login">Đăng nhập</a>
             <a href="#" class="nav-button-signup">Đăng kí</a>
         </div>
     </div>
