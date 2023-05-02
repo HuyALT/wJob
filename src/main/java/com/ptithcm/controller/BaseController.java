@@ -9,7 +9,6 @@ public class BaseController {
 	
 	@RequestMapping("login")
 	public String showLogin() {
-		System.out.println("OKOK");
 		return "login";
 	}
 }

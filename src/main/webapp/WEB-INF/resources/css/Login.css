@@ -7,7 +7,7 @@
 .contain {
     height: 100%;
     width: 100%;
-    background-image: url(/resources/images/background.jpg) ;
+    background-image: url(/wJob/resources/images/background.jpg) ;
     position: absolute;
     background-color: antiquewhite;
 }
