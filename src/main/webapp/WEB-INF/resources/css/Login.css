@@ -1,0 +1,128 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.contain {
+    height: 100%;
+    width: 100%;
+    background-image: url(/resources/images/background.jpg) ;
+    position: absolute;
+    background-color: antiquewhite;
+}
+
+.contain-form {
+    width: 380px;
+    height: 480px;
+    position: relative;
+    background: #fff;
+    margin: 6% auto;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.button-box {
+    width: 240px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px  #264e551f ;
+    border-radius: 30px;
+}
+.toggle-btn {
+    padding: 10px 30px ;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 128px; 
+    height: 100%;
+    background: linear-gradient(to right, #a7d7c5,#74b49b);
+    border-radius: 30px;
+    transition: .5s;
+    text-align: center;
+}
+.social-icons {
+    margin: 30px auto;
+    text-align: center;
+}
+.social-icons i {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 12px ;
+    box-shadow: 0 0 20px 0 #7f7f7f3d ;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 50%;
+    color:#64a36f ;
+}
+.social-icons i:hover {
+    color: #333;
+}
+.form-login {
+    top: 180px ;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+}
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right,#a7d7c5 , #74b49b);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    margin-top: 30px;
+}
+.submit-btn:hover {
+    color: #fff;
+    background: linear-gradient(to right, #b6cdbd, #5c715e);
+}
+.check-box {
+    margin: 16px 10px 30px 0;
+
+}
+span {
+    color: #777;
+    font-size: 12px;
+    bottom: 94px ;
+    position: absolute;
+}
+#login {
+    left: 50px;
+}
+#register {
+    left: 450px;
+}
+.forgot_password {
+    position: absolute;
+    top: 138px;
+    font-size: 12px;
+    left: 0;
+    text-decoration: none;
+    color: #1c1124;
+}
+.forgot_password:hover {
+    color: #59a985;
+}
