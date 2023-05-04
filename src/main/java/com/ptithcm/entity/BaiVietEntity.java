@@ -54,10 +54,6 @@ public class BaiVietEntity {
 	private NguoiDungEntity ndEntity;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "IDLV")
-	private LinhVucEntity lvEntity;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "IDTT")
 	private TrangThaiEntity ttEntity;
 	
@@ -74,7 +70,7 @@ public class BaiVietEntity {
 	}
 
 	public BaiVietEntity(int id, String tieude, String noidung, Date ngaybd, Date ngaykt, String diachi, String emaillh,
-			String sdtlh, int luotxem, NguoiDungEntity ndEntity, LinhVucEntity lvEntity, TrangThaiEntity ttEntity,
+			String sdtlh, int luotxem, NguoiDungEntity ndEntity, TrangThaiEntity ttEntity,
 			Collection<CT_BaoCaoEntity> dsctBaoCao, Collection<CT_LoaiCvEntity> dsctLoaiCV) {
 		super();
 		this.id = id;
@@ -87,7 +83,6 @@ public class BaiVietEntity {
 		this.sdtlh = sdtlh;
 		this.luotxem = luotxem;
 		this.ndEntity = ndEntity;
-		this.lvEntity = lvEntity;
 		this.ttEntity = ttEntity;
 		this.dsctBaoCao = dsctBaoCao;
 		this.dsctLoaiCV = dsctLoaiCV;
@@ -171,14 +166,6 @@ public class BaiVietEntity {
 
 	public void setNdEntity(NguoiDungEntity ndEntity) {
 		this.ndEntity = ndEntity;
-	}
-
-	public LinhVucEntity getLvEntity() {
-		return lvEntity;
-	}
-
-	public void setLvEntity(LinhVucEntity lvEntity) {
-		this.lvEntity = lvEntity;
 	}
 
 	public TrangThaiEntity getTtEntity() {
