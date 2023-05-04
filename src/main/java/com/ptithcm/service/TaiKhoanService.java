@@ -20,4 +20,8 @@ public class TaiKhoanService {
 	public NguoiDungEntity getNDlogin() {
 		return dao.getNDLogin();
 	}
+	
+	public boolean checkUsernameExist(String username) {
+		return dao.checkUserNameExist(username);
+	}
 }

@@ -44,4 +44,11 @@ public class TaiKhoanDao {
 		TaiKhoanEntity tk = session.get(TaiKhoanEntity.class, name);
 		return tk.getNdEntity();
 	}
+	
+	public boolean checkUserNameExist(String username) {
+		Session session = sessionFactory.openSession();
+		TaiKhoanEntity tk = session.get(TaiKhoanEntity.class, username);
+		
+		return tk==null?false:true;
+	}
 }
