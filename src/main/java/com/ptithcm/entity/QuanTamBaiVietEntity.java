@@ -8,19 +8,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
-import com.ptithcm.entity.combinekey.CT_BaoCaoKey;
+import com.ptithcm.entity.combinekey.QuanTamBVKey;
 
 @Entity
-@Table(name = "CT_BAOCAO")
-public class CT_BaoCaoEntity {
-
-	@EmbeddedId
-	private CT_BaoCaoKey key;
+@Table(name = "QUAN_TAM_BV")
+public class QuanTamBaiVietEntity {
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@MapsId("idbc")
-	@JoinColumn(name = "IDBC")
-	private BaoCaoEntity bcEntity;
+	@EmbeddedId
+	private QuanTamBVKey key;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@MapsId("idbv")
@@ -32,32 +27,23 @@ public class CT_BaoCaoEntity {
 	@JoinColumn(name = "IDND")
 	private NguoiDungEntity ndEntity;
 
-	public CT_BaoCaoEntity() {
+	public QuanTamBaiVietEntity() {
 		super();
 	}
 
-	public CT_BaoCaoEntity(CT_BaoCaoKey key, BaoCaoEntity bcEntity, BaiVietEntity bvEntity, NguoiDungEntity ndEntity) {
+	public QuanTamBaiVietEntity(QuanTamBVKey key, BaiVietEntity bvEntity, NguoiDungEntity ndEntity) {
 		super();
 		this.key = key;
-		this.bcEntity = bcEntity;
 		this.bvEntity = bvEntity;
 		this.ndEntity = ndEntity;
 	}
 
-	public CT_BaoCaoKey getKey() {
+	public QuanTamBVKey getKey() {
 		return key;
 	}
 
-	public void setKey(CT_BaoCaoKey key) {
+	public void setKey(QuanTamBVKey key) {
 		this.key = key;
-	}
-
-	public BaoCaoEntity getBcEntity() {
-		return bcEntity;
-	}
-
-	public void setBcEntity(BaoCaoEntity bcEntity) {
-		this.bcEntity = bcEntity;
 	}
 
 	public BaiVietEntity getBvEntity() {

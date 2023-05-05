@@ -7,6 +7,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.ptithcm.entity.combinekey.CT_LoaiCvKey;
+
 @Entity
 @Table(name = "CT_LOAICV")
 public class CT_LoaiCvEntity {

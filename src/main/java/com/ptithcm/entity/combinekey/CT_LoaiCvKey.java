@@ -1,4 +1,4 @@
-package com.ptithcm.entity;
+package com.ptithcm.entity.combinekey;
 
 import java.io.Serializable;
 

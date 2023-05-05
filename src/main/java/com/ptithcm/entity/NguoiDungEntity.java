@@ -47,6 +47,9 @@ public class NguoiDungEntity {
 	@OneToOne(mappedBy = "ndEntity")
 	private TaiKhoanEntity tknd;
 	
+	@OneToOne(mappedBy = "ndEntity")
+	private HoSoEntity hsnd;
+	
 	@OneToMany(mappedBy = "ndEntity")
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<BaiVietEntity> dsbv;
@@ -60,7 +63,8 @@ public class NguoiDungEntity {
 	}
 
 	public NguoiDungEntity(int id, String ho, String ten, boolean phai, String diachi, Date ngaysinh, String cmnd,
-			String sdt, TaiKhoanEntity tknd, Collection<BaiVietEntity> dsbv, Collection<CT_BaoCaoEntity> dsctbc) {
+			String sdt, TaiKhoanEntity tknd, HoSoEntity hsnd, Collection<BaiVietEntity> dsbv,
+			Collection<CT_BaoCaoEntity> dsctbc) {
 		super();
 		this.id = id;
 		this.ho = ho;
@@ -71,6 +75,7 @@ public class NguoiDungEntity {
 		this.cmnd = cmnd;
 		this.sdt = sdt;
 		this.tknd = tknd;
+		this.hsnd = hsnd;
 		this.dsbv = dsbv;
 		this.dsctbc = dsctbc;
 	}
@@ -147,6 +152,14 @@ public class NguoiDungEntity {
 		this.tknd = tknd;
 	}
 
+	public HoSoEntity getHsnd() {
+		return hsnd;
+	}
+
+	public void setHsnd(HoSoEntity hsnd) {
+		this.hsnd = hsnd;
+	}
+
 	public Collection<BaiVietEntity> getDsbv() {
 		return dsbv;
 	}
@@ -162,6 +175,8 @@ public class NguoiDungEntity {
 	public void setDsctbc(Collection<CT_BaoCaoEntity> dsctbc) {
 		this.dsctbc = dsctbc;
 	}
+
+	
 	
 	
 	
