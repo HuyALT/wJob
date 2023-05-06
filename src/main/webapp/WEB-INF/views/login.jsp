@@ -22,7 +22,7 @@
                 <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
             </div>
             <form action="" class="form-login" id="login">
-            <input type="text" class="input-field" placeholder="Email" required>
+            <input type="text" class="input-field" placeholder="Tên Đăng nhập" required>
             <input type="text" class="input-field" placeholder="Mật khẩu" required>
             <input type="checkbox" class="check-box"><span>Nhớ mật khẩu</span>
             <a href="" class="forgot_password">Quên mật khẩu</a>
@@ -31,7 +31,6 @@
             </form>
             <form action="" class="form-login" id="register">
                 <input type="text" class="input-field" placeholder="Tên đăng nhập" required>
-                <input type="email" class="input-field" placeholder="Email" required>
                 <input type="text" class="input-field" placeholder="Mật khẩu" required>
                 <input type="text" class="input-field" placeholder="Nhập lại mật khẩu" required>
                 
