@@ -40,16 +40,6 @@
     border-style: solid 1px ;
     border-radius: 5px;
 }
-.nav-button-signup {
-    margin: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-size: 20px;
-    color: aliceblue;
-    font-weight: 800;
-    text-align: center;
-    text-decoration: none;
-}
 .nav-button-signup:hover {
     color: black;
     background-color: white;

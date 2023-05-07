@@ -14,6 +14,10 @@ public class BaseController {
 		return "login";
 	}
 	
+	@RequestMapping("register")
+	public String showaddInformation() {
+		return "register";
+	}
 //	@RequestMapping("/checkLogin")
 //	public String checkLogin() {
 //		Authentication auth = SecurityContextHolder.getContext().getAuthentication();

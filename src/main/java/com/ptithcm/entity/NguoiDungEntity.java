@@ -44,6 +44,9 @@ public class NguoiDungEntity {
 	@Column(name = "SDT")
 	private String sdt;
 	
+	@Column(name = "EMAIL")
+	private String email;
+	
 	@OneToOne(mappedBy = "ndEntity")
 	private TaiKhoanEntity tknd;
 	
@@ -62,8 +65,10 @@ public class NguoiDungEntity {
 		super();
 	}
 
+	
+
 	public NguoiDungEntity(int id, String ho, String ten, boolean phai, String diachi, Date ngaysinh, String cmnd,
-			String sdt, TaiKhoanEntity tknd, HoSoEntity hsnd, Collection<BaiVietEntity> dsbv,
+			String sdt, String email, TaiKhoanEntity tknd, HoSoEntity hsnd, Collection<BaiVietEntity> dsbv,
 			Collection<CT_BaoCaoEntity> dsctbc) {
 		super();
 		this.id = id;
@@ -74,11 +79,26 @@ public class NguoiDungEntity {
 		this.ngaysinh = ngaysinh;
 		this.cmnd = cmnd;
 		this.sdt = sdt;
+		this.email = email;
 		this.tknd = tknd;
 		this.hsnd = hsnd;
 		this.dsbv = dsbv;
 		this.dsctbc = dsctbc;
 	}
+
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
 
 	public int getId() {
 		return id;

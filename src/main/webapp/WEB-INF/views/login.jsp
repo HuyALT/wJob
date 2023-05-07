@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="<c:url value = '/resources/css/Login.css'/>">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="assets/css/login-signup-forget.css">
+    <link rel="stylesheet" href="<c:url value = '/resources/css/login.css'/>">
+    <script src="https://kit.fontawesome.com/37bc1e751f.js" crossorigin="anonymous"></script>
     <title>Login</title>
 </head>
 <body>
@@ -21,20 +21,19 @@
                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
             </div>
-            <form action="" class="form-login" id="login">
-            <input type="text" class="input-field" placeholder="Tên Đăng nhập" required>
-            <input type="text" class="input-field" placeholder="Mật khẩu" required>
-            <input type="checkbox" class="check-box"><span>Nhớ mật khẩu</span>
+            <form action="" class="form-login" id="login" method="post">
+            <input type="text" name = "username"  class="input-field" placeholder="Tên Đăng nhập" required autocomplete="off" pattern="[a-zA-Z0-9]{5,}" title="Tên Đăng nhập phải lớn hơn 4 kí tự và không chứa kí tự đặc biệt">
+            <input type="text" name = "password"  class="input-field" placeholder="Mật khẩu" required autocomplete="off">
             <a href="" class="forgot_password">Quên mật khẩu</a>
             <button type="submit" class="submit-btn">Đăng nhập</button>
             
             </form>
-            <form action="" class="form-login" id="register">
-                <input type="text" class="input-field" placeholder="Tên đăng nhập" required>
-                <input type="text" class="input-field" placeholder="Mật khẩu" required>
-                <input type="text" class="input-field" placeholder="Nhập lại mật khẩu" required>
-                
-                <button type="submit" class="submit-btn">Đăng ký</button>
+            <form action="register" class="form-login" id="register" method="post">
+                <input type="text" name="username" class="input-field" placeholder="Tên đăng nhập" required autocomplete="off"  pattern="[a-zA-Z0-9]{5,}" title="Tên Đăng nhập phải lớn hơn 4 kí tự và không chứa kí tự đặc biệt">
+                <input type="password" name="password-reg" class="input-field" placeholder="Mật khẩu" required autocomplete="off" >
+                <input type="password" name="confirmpassword" class="input-field" placeholder="Nhập lại mật khẩu" autocomplete="off" required>
+                <span id="error-text" style="color: red; display: none;">Mật khẩu nhập lại không chính xác</span>
+                <button type="submit" class="submit-btn" id = "btn-dangki" >Đăng ký</button>
             </form>
         </div>
     </div>
@@ -55,5 +54,6 @@
             z.style.left = "0";
         }
     </script>
+    <script type="text/javascript" src="<c:url value = '/resources/js/validationLogin.js'/>"></script>
 </body>
 </html>
