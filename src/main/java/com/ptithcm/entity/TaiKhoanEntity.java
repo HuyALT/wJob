@@ -28,18 +28,35 @@ public class TaiKhoanEntity {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "MAQUYEN")
 	private QuyenEntity quEntity;
+	
+	@Column(name = "TRANGTHAI")
+	private boolean trangthai;
 
 	public TaiKhoanEntity() {
 		super();
 	}
 
-	public TaiKhoanEntity(String username, String password, NguoiDungEntity ndEntity, QuyenEntity quEntity) {
+
+	public TaiKhoanEntity(String username, String password, NguoiDungEntity ndEntity, QuyenEntity quEntity,
+			boolean trangthai) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.ndEntity = ndEntity;
 		this.quEntity = quEntity;
+		this.trangthai = trangthai;
 	}
+
+
+	public boolean isTrangthai() {
+		return trangthai;
+	}
+
+
+	public void setTrangthai(boolean trangthai) {
+		this.trangthai = trangthai;
+	}
+
 
 	public String getUsername() {
 		return username;

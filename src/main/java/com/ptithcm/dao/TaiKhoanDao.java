@@ -34,6 +34,9 @@ public class TaiKhoanDao {
 			t.rollback();
 			return false;
 		}
+		finally {
+			session.close();
+		}
 	}
 	
 	public NguoiDungEntity getNDLogin() {

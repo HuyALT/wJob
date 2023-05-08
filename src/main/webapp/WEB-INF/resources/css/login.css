@@ -94,7 +94,7 @@
     border: 0;
     outline: none;
     border-radius: 30px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 .submit-btn:hover {
     color: #fff;
@@ -106,14 +106,19 @@
 #register {
     left: 450px;
 }
-#error-text {
+#error-text,#error-username {
 	position: absolute;
 	bottom: 50px;
 	font-size: 12px;
 }
+#incorect {
+	position: absolute;
+	bottom: 70px;
+	font-size: 12px;
+}
 .forgot_password {
     position: absolute;
-    top: 100px;
+    top: 120px;
     font-size: 12px;
     left: 0;
     text-decoration: none;

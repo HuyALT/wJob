@@ -1,6 +1,6 @@
 package com.ptithcm.entity;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Collection;
 
 import javax.persistence.Column;
@@ -11,9 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "NGUOIDUNG")
@@ -36,6 +39,8 @@ public class NguoiDungEntity {
 	private String diachi;
 	
 	@Column(name = "NGAYSINH")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date ngaysinh;
 	
 	@Column(name = "CMND")
@@ -60,16 +65,18 @@ public class NguoiDungEntity {
 	@OneToMany(mappedBy = "ndEntity")
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<CT_BaoCaoEntity> dsctbc;
+	
+	@OneToMany(mappedBy = "ndEntity")
+	@LazyCollection(LazyCollectionOption.FALSE)
+	private Collection<QuanTamBaiVietEntity> qtbv;
 
 	public NguoiDungEntity() {
 		super();
 	}
-
 	
-
 	public NguoiDungEntity(int id, String ho, String ten, boolean phai, String diachi, Date ngaysinh, String cmnd,
 			String sdt, String email, TaiKhoanEntity tknd, HoSoEntity hsnd, Collection<BaiVietEntity> dsbv,
-			Collection<CT_BaoCaoEntity> dsctbc) {
+			Collection<CT_BaoCaoEntity> dsctbc, Collection<QuanTamBaiVietEntity> qtbv) {
 		super();
 		this.id = id;
 		this.ho = ho;
@@ -84,7 +91,17 @@ public class NguoiDungEntity {
 		this.hsnd = hsnd;
 		this.dsbv = dsbv;
 		this.dsctbc = dsctbc;
+		this.qtbv = qtbv;
 	}
+
+	public Collection<QuanTamBaiVietEntity> getQtbv() {
+		return qtbv;
+	}
+
+	public void setQtbv(Collection<QuanTamBaiVietEntity> qtbv) {
+		this.qtbv = qtbv;
+	}
+
 
 
 
