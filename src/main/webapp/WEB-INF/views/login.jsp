@@ -23,7 +23,7 @@
             </div>
             <form action="<c:url value='j_spring_security_login' />" class="form-login" id="login" method="post">
             <input type="text" name = "username"  class="input-field" placeholder="Tên Đăng nhập" required autocomplete="off" pattern="[a-zA-Z0-9]{5,}" title="Tên Đăng nhập phải lớn hơn 4 kí tự và không chứa kí tự đặc biệt">
-            <input type="text" name = "password"  class="input-field" placeholder="Mật khẩu" required autocomplete="off">
+            <input type="password" name = "password"  class="input-field" placeholder="Mật khẩu" required autocomplete="off">
              <span id = "incorect" style="color: red; display: block">${message}</span>
             <a href="" class="forgot_password">Quên mật khẩu</a>
             <button type="submit" class="submit-btn">Đăng nhập</button>
