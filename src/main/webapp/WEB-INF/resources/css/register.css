@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500;600;700&display=swap');
+
 
  * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
  }
 
@@ -17,24 +19,29 @@
    width: 100%;
    height: 750px;
    position: relative;
-   background: linear-gradient(90deg, rgb(56, 47, 231) 0%, rgb(226, 39, 138) 35%, rgb(22, 223, 109) 100%);
-   
+   background-color: #ddeedf;
+   box-shadow: 2px 10px 2px 1px rgba(0, 0, 0, 0.2)
 }
 
 .contain-header {
    width: 100%;
-   padding-top: 20px;
+   padding-top: 50px;
    font-size: xx-large;
    text-align: center;
    font-weight: 900;
-   color: azure;
+   color: #333;
+}
+
+input {
+    border: solid 1px #333;
 }
 
  .form-register {
+    margin-top: 50px;
    width: 700px;
    height: 500px;
    position: absolute;
-   background-color: cornflowerblue;
+   background-color: #F9F9F9;;
    border-radius: 8px;
    top: 10%;
    left: 27%;
@@ -158,15 +165,18 @@
  }
  .form-register-submit {
    position: absolute;
+   color: #333;
    width: 150px;
    height: 50px;
    top: 85%;
    left: 40%;
    border-radius: 10px;
+   border: none;
    font-size: 20px;
-   background-color: burlywood;
+   background-color: #F1D3B3;
  }
  .form-register-submit:hover {
-   background-color: chocolate;
+   background-color: #576F72;
+   color: #fff;
    cursor: pointer;
  }

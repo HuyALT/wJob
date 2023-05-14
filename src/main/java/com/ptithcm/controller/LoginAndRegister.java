@@ -109,7 +109,7 @@ public class LoginAndRegister {
 		return "login";
 	}
 	
-	@RequestMapping("logout")
+	@RequestMapping("/logout")
 	public String Logout() {
 		return "redirect:/login";
 	}
@@ -132,4 +132,6 @@ public class LoginAndRegister {
 		}
 		return "redirect:/404";
 	}
+	
+	
 }

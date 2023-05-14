@@ -1,6 +1,6 @@
 var ho = document.getElementsByName("ho")[0];
 ho.addEventListener("keypress",function(event) {
-	let pattern = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~1234567890]/
+	let pattern = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~1234567890]/
 	if (pattern.test(event.key)) {
 		event.preventDefault();
 	}

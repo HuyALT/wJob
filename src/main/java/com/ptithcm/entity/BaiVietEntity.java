@@ -24,54 +24,77 @@ public class BaiVietEntity {
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@Column(name = "TIEUDE")
 	private String tieude;
-	
+
 	@Column(name = "NOIDUNG")
 	private String noidung;
-	
+
 	@Column(name = "NGAYBATDAU")
 	private Date ngaybd;
-	
+
 	@Column(name = "NGAYKETTHUC")
 	private Date ngaykt;
-	
+
 	@Column(name = "DIACHI")
 	private String diachi;
-	
+
 	@Column(name = "EMAILLH")
 	private String emaillh;
-	
+
 	@Column(name = "SDTLH")
 	private String sdtlh;
-	
+
 	@Column(name = "LUOTXEM")
 	private int luotxem;
+
+	@Column(name = "LOAICV")
+	private String loaicv;
+
+	@Column(name = "MUCLUONG")
+	private int mucluong;
+
+	@Column(name = "VITRI")
+	private String vitri;
 	
+	@Column(name = "SOLUONGTUYEN")
+	private int soluong;
+	
+	@Column(name = "NAMKINHNGHIEM")
+	private int namkn;
+	
+	@Column(name = "KHUVUC")
+	private String khuvuc;
+	
+	@Column(name = "TENCT")
+	private String tenct;
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "IDND")
 	private NguoiDungEntity ndEntity;
-	
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "IDNGANH")
+	private NganhEntity nganhEntity;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "IDTRINHDO")
+	private TrinhDoEntity tdEntity;
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "IDTT")
 	private TrangThaiEntity ttEntity;
-	
-	@OneToMany(mappedBy = "bvEntity")
-	@LazyCollection(LazyCollectionOption.FALSE)
-	private Collection<CT_BaoCaoEntity> dsctBaoCao;
-	
-	@OneToMany(mappedBy = "bvEntity")
-	@LazyCollection(LazyCollectionOption.FALSE)
-	private Collection<CT_LoaiCvEntity> dsctLoaiCV;
 
 	public BaiVietEntity() {
 		super();
 	}
 
+	
+
 	public BaiVietEntity(int id, String tieude, String noidung, Date ngaybd, Date ngaykt, String diachi, String emaillh,
-			String sdtlh, int luotxem, NguoiDungEntity ndEntity, TrangThaiEntity ttEntity,
-			Collection<CT_BaoCaoEntity> dsctBaoCao, Collection<CT_LoaiCvEntity> dsctLoaiCV) {
+			String sdtlh, int luotxem, String loaicv, int mucluong, String vitri, int soluong, int namkn, String khuvuc,
+			String tenct, NguoiDungEntity ndEntity, NganhEntity nganhEntity, TrinhDoEntity tdEntity, TrangThaiEntity ttEntity) {
 		super();
 		this.id = id;
 		this.tieude = tieude;
@@ -82,10 +105,66 @@ public class BaiVietEntity {
 		this.emaillh = emaillh;
 		this.sdtlh = sdtlh;
 		this.luotxem = luotxem;
+		this.loaicv = loaicv;
+		this.mucluong = mucluong;
+		this.vitri = vitri;
+		this.soluong = soluong;
+		this.namkn = namkn;
+		this.khuvuc = khuvuc;
+		this.tenct = tenct;
 		this.ndEntity = ndEntity;
+		this.nganhEntity = nganhEntity;
+		this.tdEntity = tdEntity;
 		this.ttEntity = ttEntity;
-		this.dsctBaoCao = dsctBaoCao;
-		this.dsctLoaiCV = dsctLoaiCV;
+	}
+
+	public int getSoluong() {
+		return soluong;
+	}
+
+	public String getTenct() {
+		return tenct;
+	}
+	public void setTenct(String tenct) {
+		this.tenct = tenct;
+	}
+
+	public void setSoluong(int soluong) {
+		this.soluong = soluong;
+	}
+
+	public int getNamkn() {
+		return namkn;
+	}
+
+	public void setNamkn(int namkn) {
+		this.namkn = namkn;
+	}
+
+	public String getKhuvuc() {
+		return khuvuc;
+	}
+
+	public void setKhuvuc(String khuvuc) {
+		this.khuvuc = khuvuc;
+	}
+
+
+
+	public int getMucluong() {
+		return mucluong;
+	}
+
+	public void setMucluong(int mucluong) {
+		this.mucluong = mucluong;
+	}
+
+	public String getVitri() {
+		return vitri;
+	}
+
+	public void setVitri(String vitri) {
+		this.vitri = vitri;
 	}
 
 	public int getId() {
@@ -176,22 +255,28 @@ public class BaiVietEntity {
 		this.ttEntity = ttEntity;
 	}
 
-	public Collection<CT_BaoCaoEntity> getDsctBaoCao() {
-		return dsctBaoCao;
+	public String getLoaicv() {
+		return loaicv;
 	}
 
-	public void setDsctBaoCao(Collection<CT_BaoCaoEntity> dsctBaoCao) {
-		this.dsctBaoCao = dsctBaoCao;
+	public void setLoaicv(String loaicv) {
+		this.loaicv = loaicv;
 	}
 
-	public Collection<CT_LoaiCvEntity> getDsctLoaiCV() {
-		return dsctLoaiCV;
+	public NganhEntity getNganhEntity() {
+		return nganhEntity;
 	}
 
-	public void setDsctLoaiCV(Collection<CT_LoaiCvEntity> dsctLoaiCV) {
-		this.dsctLoaiCV = dsctLoaiCV;
+	public void setNganhEntity(NganhEntity nganhEntity) {
+		this.nganhEntity = nganhEntity;
 	}
-	
-	
-	
+
+	public TrinhDoEntity getTdEntity() {
+		return tdEntity;
+	}
+
+	public void setTdEntity(TrinhDoEntity tdEntity) {
+		this.tdEntity = tdEntity;
+	}
+
 }

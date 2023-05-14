@@ -1,0 +1,309 @@
+main {
+	padding-top: 70px;
+}
+
+.form-upload-status {
+    width: 620px;
+    height: 1100px;
+    position: relative;
+    background: #fff;
+    margin: 3% auto;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.box-job {
+	 display: flex;
+    width: 80%;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-top: 0px;
+    margin-left: 55px;
+    font-size: 14px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    outline: none;
+    background-color: transparent;
+}
+
+.box-job select {
+	width: 220px;
+	height: 30px;
+}
+
+.job-text {
+	padding-right: 10px;
+}
+
+.input-field-form {
+    width: 80%;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-top: 20px;
+    margin-left: 55px;
+    font-size: 16px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+}
+.form-name {
+    width: 90%;
+    font-size: 16px;
+}
+.form-date {
+    font-size: 16px;
+    width: 20%;
+    margin-left: 10px;
+}
+.box-form-date {
+    display: flex;
+}
+.box-form-exp {
+    display: flex;
+}
+.input-exp-text  {
+    width: 28%;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-top: 20px;
+    margin-left: 55px;
+    font-size: 14px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    outline: none;
+    background-color: transparent;
+    
+}
+.combox-form {
+    width: 30%;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-top: 15px;
+    margin-left: 5px;
+    font-size: 16px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 50px;
+    outline: none;
+    background-color: transparent;
+
+}
+.combox-form select {
+    width: 150px;
+    height: 25px;
+}
+.form-exp {
+    width: 20%;
+    margin-left: 10px;
+} 
+.input-date-text {
+    width: 18%;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-top: 20px;
+    margin-left: 55px;
+    font-size: 14px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    outline: none;
+    background-color: transparent;
+}
+.form-wage-type {
+    display: flex;
+    width: 80%;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-top: 0px;
+    margin-left: 55px;
+    font-size: 14px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    outline: none;
+    background-color: transparent;
+    justify-content: space-between;
+}
+.box-wage {
+    display: flex;
+}
+.wage-text {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.box-wage input {
+    height: 25px;
+    width: 170px;
+    padding-left: 10px;
+}
+.box-type {
+    display: flex;
+}
+.type-text {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.box-type select {
+    height: 30px;
+    width: 120px;
+}
+.form-job {
+    font-size: 14px;
+    width: 50%;
+    margin-top: 5px;
+}
+.box-form-quantity {
+    display: flex;
+}
+.input-quantity-text {
+    width: 12%;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-top: 10px;
+    margin-left: 55px;
+    font-size: 14px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    outline: none;
+    background-color: transparent;  
+}
+.box-form-quantity input {
+    height: 30px;
+    width: 80px;
+    margin-top: 16px;
+    padding-left: 5px;
+} 
+.box-branch {
+    display: flex;
+    width: 80%;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-top: 0px;
+    margin-left: 55px;
+    font-size: 14px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    outline: none;
+    background-color: transparent;
+}
+.branch-text {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.box-branch select {
+    height: 25px;
+    width: 150px;
+}
+.box-local {
+    display: flex;
+    width: 80%;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-top: 0px;
+    margin-left: 55px;
+    font-size: 14px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    outline: none;
+    background-color: transparent;
+}
+.box-local-detail {
+	display: flex;
+    width: 80%px;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-top: 0px;
+    margin-left: 55px;
+    font-size: 14px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    outline: none;
+    background-color: transparent;
+}
+
+.local-detail-input {
+	width: 450px;
+	height: 30px;
+	padding-left: 10px;
+}
+
+.local-detail {
+	padding-right: 10px;
+}
+
+.local-text {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.box-local select {
+    height: 25px;
+    width: 150px;
+}
+.button-submit-form {
+    height: 30px;
+    width: 180px;
+    position: absolute;
+    bottom: 0;
+    right:  20px;
+    background: linear-gradient(to right, #a7d7c5,#74b49b);
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;    
+    border-bottom: 0;
+    border-radius: 20px;
+   
+}
+.box-body-text {
+    width: 80%;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-top: 0px;
+    margin-left: 55px;
+    font-size: 14px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    outline: none;
+    background-color: transparent;
+}
+.box-body-text textarea {
+	padding: 10px;
+}
+
+.body-text {
+    margin-bottom: 10px;
+}
+
+.box-email, .box-phone {
+	display: flex;
+    width: 80%;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-top: 0px;
+    margin-left: 55px;
+    font-size: 14px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    outline: none;
+    background-color: transparent;
+}
+
+.text-email, .text-phone {
+	padding-right: 10px;
+}
+.email-input, .phone-input {
+	height: 25px;
+    width: 180px;
+    padding-left: 10px;
+}

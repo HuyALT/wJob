@@ -34,4 +34,20 @@ public class NguoiDungDao {
 		}
 	}
 	
+	public boolean changeInfomation(NguoiDungEntity nd) {
+		Session session = sessionFactory.openSession();
+		Transaction t = session.beginTransaction();
+		
+		try {
+			session.merge(nd);
+			t.commit();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			t.rollback();
+			return false;
+		} finally {
+			session.close();
+		}
+	}
 }

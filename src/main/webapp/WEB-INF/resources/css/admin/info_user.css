@@ -1,0 +1,66 @@
+.user-info {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 8px;
+    padding: 12px 24px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding-bottom: 50px;
+    
+}
+
+.input-box input {
+    font-size: medium;
+    color: #000000;
+}
+
+.sub-title {
+    font-weight: 600;
+}
+
+.user-name {
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+.user-name span {
+    font-size: 20px; 
+    font-weight: 600; 
+    margin-left: 40px;
+}
+
+.user-info h6 {
+    color: #42b883;
+}
+
+.user-info .input-box {
+    margin-left: 30px;
+    padding: 12px;
+}
+
+.user-info .input-box input {
+    border: none;
+}
+.user-info .input-box label {
+    margin-right: 20px;
+}
+
+
+.user-info .input-box input:focus {
+    border: solid 1px #42b883;
+    padding: 4px;
+    border-radius: 8px;
+
+}
+
+.user-info .input-box textarea {
+    margin-top: 10px;
+    border: none;
+}
+
+.user-info .input-box textarea:focus {
+    border: solid 1px #42b883;
+    border-radius: 8px;
+}

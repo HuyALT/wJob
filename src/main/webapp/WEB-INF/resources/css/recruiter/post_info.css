@@ -1,0 +1,130 @@
+:root {
+    --white-color:                  #FFFFFF;
+    --primary-color:                #38b083;
+    --section-bg-color:             #f5f5f5;
+    --border-color:                 #dee2e6;
+    --dark-color:                   #000000;
+    --grey-color:                   #fcfeff;
+    --title-color:                  #565758;
+    --p-color:                      #717275;
+    --footer-bg-color:              #07262e;
+  
+    --body-font-family:             'Roboto', sans-serif;
+  
+    --h1-font-size:                 68px;
+    --h2-font-size:                 42px;
+    --h3-font-size:                 36px;
+    --h4-font-size:                 32px;
+    --h5-font-size:                 24px;
+    --h6-font-size:                 22px;
+    --p-font-size:                  18px;
+    --menu-font-size:               18px;
+    --copyright-text-font-size:     16px;
+    --custom-link-font-size:        14px;
+  
+    --font-weight-light:            300;
+    --font-weight-normal:           400;
+    --font-weight-bold:             600;
+  }
+
+
+.container2 {
+    max-width: 960px;
+    margin: auto;
+}
+
+.container2 .job-detail__container {
+    margin-top: 120px;
+    margin-bottom: 25px;
+    box-shadow: 0 0px 24px -8px rgba(2, 48, 71, 0.2);
+    padding:30px 50px;
+    position: relative;
+
+}
+
+.first-line-detail {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border-bottom: solid 1px #aeaeae;
+}
+
+.first-line-detail span {
+    display: flex;
+}
+
+.first-line-detail span i {
+    padding: 0 10px 0 25px;
+    font-size: 24px;
+    color: #44c662;
+}
+
+
+.first-line-detail span p {
+    color: var(--p-color);
+    padding-right: 25px;
+}
+
+.row-info {
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border-bottom: solid 1px #aeaeae;
+}
+
+.row-info .info {
+    /* margin-right: 120px; */
+}
+
+.row-info .info .title {
+    color: var(--p-color);
+    font-size: 16px;
+}
+
+.row-info .info .detail-content {
+    margin-top: -15px;
+    font-size: 18px;
+}
+
+.detail-info .group-info{
+    display: flex;
+    margin-top: -10px;
+}
+
+.detail-info h5 {
+    margin-bottom: 35px;
+    margin-top: 16px;
+
+
+}
+.group-info .title-info {
+    margin-right: 15px;
+}
+
+.btn-submit button{
+    right: 30px;
+    background: none;
+    width: 120px;
+    height: 48px;
+    border: none;
+    background-color: #90e0ab;
+    border-radius: 10px;
+    bottom: 16px;
+    float: right;
+    /* padding-bottom: 20px; */
+    position: absolute;
+}
+
+.btn-submit button:hover {
+    color: #fff;
+    background-color: #7fa99b;
+}
+
+.desc-container {
+    max-width: 960px;
+    box-shadow: 0 0 5px 2px rgba(2, 48, 71, 0.1);
+    border-radius: 10px;
+    padding: 30px 50px;
+    margin-bottom: 50px;
+}

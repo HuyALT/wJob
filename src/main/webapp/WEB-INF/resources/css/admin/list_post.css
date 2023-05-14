@@ -1,0 +1,43 @@
+.table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-header, .table-data {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+.table-wrap {
+    padding-top: 40px;
+    width: 100%;
+}
+
+.table-header {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+}
+.search-table {
+    position: absolute;
+    width: 30%;
+    height: 25px;
+    font-size: 16px;
+    padding-left: 10px;
+    right: 5px;
+    top: 10px;
+}
+.table-wrap a {
+	display: block;
+	width: 100px;
+	height: 30px;
+	background: yellow;
+	text-align: center;
+	line-height: 30px;
+}
+
+.table-wrap a:visited {
+	color: blue;
+}

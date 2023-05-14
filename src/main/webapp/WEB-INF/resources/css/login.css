@@ -11,7 +11,6 @@
     background-image: url(/wJob/resources/images/background.jpg) ;
     position: absolute;
     background-color: antiquewhite;
-    background-repeat: no-repeat;
 }
 .contain-form {
     width: 380px;

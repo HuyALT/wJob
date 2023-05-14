@@ -15,4 +15,8 @@ public class NguoiDungService {
 	public boolean addNguoiDung(NguoiDungEntity nd) {
 		return dao.addNguoiDung(nd);
 	}
+	
+	public boolean changeInfomation(NguoiDungEntity nd) {
+		return dao.changeInfomation(nd);
+	}
 }

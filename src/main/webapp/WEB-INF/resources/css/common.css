@@ -1,1 +1,102 @@
-@charset "UTF-8";
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.contain {
+    width: 100%;
+    height: 750px;
+    background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    position: relative;
+}
+.contain-header {
+    position: fixed;
+    width: 83%;
+    height: 70px;
+    right: 10px;
+    top: 10px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #a7d7c5,#74b49b);
+}
+.contain-header-logo {
+    position: absolute;
+    top: 25%;
+    left: 40%;
+}
+
+
+.basic-user-information {
+    position: fixed;
+    width: 15%;
+    height: 700px;
+    left: 10px;
+    top: 10px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #a7d7c5,#74b49b);
+}
+.fa-circle-user {
+    position: relative;
+    margin: 0px auto;
+    color:white;
+    font-size: 100px;
+    background: black ;
+    border-radius: 50%;
+    margin: 20px 0px;
+    left: 30%;
+}
+.user-name {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 45px;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+.user-name-text {
+    display: block;
+    text-align: center;
+}
+.box-user-info {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+#user-icon {
+    font-size: 19px;
+    margin-left: 15px;
+}
+.user-mail-text {
+    margin-right: 15px;
+}
+.user-phone-text {
+    display: block;
+    position: relative;
+    right: 99px;
+}
+.user-local-text {
+    display: block;
+    position: relative;
+    right: 102px;
+}
+.contain-header-menu {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+}
+a #contain-header-icon {
+    margin: 22px 20px ;
+    font-size: 25px;
+    color: black;
+}
+.main-screen {
+    position: fixed;
+    width: 83%;
+    height: 620px;
+    right: 10px;
+    top: 90px;
+    border-radius: 10px;
+    background-color: #fff;
+}

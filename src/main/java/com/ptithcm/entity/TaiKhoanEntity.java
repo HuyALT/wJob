@@ -36,7 +36,6 @@ public class TaiKhoanEntity {
 		super();
 	}
 
-
 	public TaiKhoanEntity(String username, String password, NguoiDungEntity ndEntity, QuyenEntity quEntity,
 			boolean trangthai) {
 		super();
@@ -46,17 +45,6 @@ public class TaiKhoanEntity {
 		this.quEntity = quEntity;
 		this.trangthai = trangthai;
 	}
-
-
-	public boolean isTrangthai() {
-		return trangthai;
-	}
-
-
-	public void setTrangthai(boolean trangthai) {
-		this.trangthai = trangthai;
-	}
-
 
 	public String getUsername() {
 		return username;
@@ -89,6 +77,12 @@ public class TaiKhoanEntity {
 	public void setQuEntity(QuyenEntity quEntity) {
 		this.quEntity = quEntity;
 	}
-	
-	
+
+	public boolean getTrangthai() {
+		return trangthai;
+	}
+
+	public void setTrangthai(boolean trangthai) {
+		this.trangthai = trangthai;
+	}
 }

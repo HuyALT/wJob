@@ -1,5 +1,7 @@
 package com.ptithcm.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +25,25 @@ public class TaiKhoanService {
 	
 	public boolean checkUsernameExist(String username) {
 		return dao.checkUserNameExist(username);
+	}
+	
+	public List<TaiKhoanEntity> getListTK() {
+		return dao.getListTaiKhoan();
+	}
+	
+	public TaiKhoanEntity getTKLogin() {
+		return dao.getTKLogin();
+	}
+	
+	public void changeStatusAccount(TaiKhoanEntity tk) {
+		dao.changeStatusAccount(tk);
+	}
+	
+	public TaiKhoanEntity getTKByUsername(String username) {
+		return dao.getTKByUsername(username);
+	}
+	
+	public void ChangePassword(TaiKhoanEntity tk, String rawpassword) {
+		dao.ChangePassword(tk, rawpassword);
 	}
 }
