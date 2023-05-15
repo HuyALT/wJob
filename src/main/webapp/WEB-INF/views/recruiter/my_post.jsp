@@ -25,7 +25,7 @@
                         <div class="quantity">Số lượng: ${bv.soluong}</div>
                         <div class="date">Hạn nôp hồ sơ: ${bv.ngaykt }</div>
                         <div class="status" style="${bv.ttEntity.id==2?'color: green;':'color: red;'}">${bv.ttEntity.tentt}</div>
-                         <a class = "like" href="like-list?id=${bv.id}" style="${bv.ttEntity.id==2?'display: block;':'display: none;'}">Ứng tuyển: 0</a>
+                         <a class = "like" href="like-list?id=${bv.id}" style="${bv.ttEntity.id==2?'display: block;':'display: none;'}">Ứng tuyển: ${bv.lqt.size()}</a>
                         <a class = "lockpost" href="lock?id=${bv.id}" style="${bv.ttEntity.id==2?'display: block;':'display: none;'}">Nhấn để khóa bài viết</a>
                     </div>
                   </c:forEach>                   

@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="contain">
-    	<%@include file="/WEB-INF/views/recruiter/header.jsp" %>
+    	<%@include file="/WEB-INF/views/job_seeker/header.jsp" %>
 		<main>
 			 <section id="section-filter">
             <div class="bar-search">
@@ -56,7 +56,7 @@
                     
                 </div>
                 <div class="btn-search">
-                    <button class="submit-search" onclick="search_active_recruiter()">
+                    <button class="submit-search" onclick="search_active_job_seeker()">
                         Tìm kiếm
                     </button>
                 </div>
@@ -66,7 +66,7 @@
             <div class="jobs-list-container">
                 <div class="jobs">
                 <c:forEach var="bv" items="${lbv}">
-                    <div class="job" onclick="window.location.href='/wJob/recruiter/job_info?id=${bv.id}'">
+                    <div class="job" onclick="window.location.href='/wJob/job_seeker/job_info?id=${bv.id}'">
                         <h2 class="job-title">${bv.tieude}</h2>
                         <a class="company-name">${bv.tenct }</a>
                         <span class="salary"><i class="bx bx-money"></i>${bv.mucluong }</span>
@@ -85,7 +85,7 @@
             
         </section>
 		</main>
-		<%@include file = "/WEB-INF/views/recruiter/footter.jsp" %>
+		<%@include file = "/WEB-INF/views/job_seeker/footter.jsp" %>
 		<script type="text/javascript" src="<c:url value = "/resources/js/custom.js"/>"></script>
 		<script type="text/javascript" src="<c:url value = "/resources/js/pagination.js"/>"></script>
     </div>

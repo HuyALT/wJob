@@ -212,7 +212,33 @@ public class recruiterController {
 		model.addAttribute("email", bv.getEmaillh());
 		model.addAttribute("sdt", bv.getSdtlh());
 		model.addAttribute("Mota", bv.getNoidung());
+		
+		
 		return "recruiter/post_info";
+	}
+	
+	@RequestMapping("like-list")
+	public String showlikeList(Model model, String id) {
+		
+		BaiVietEntity bv = bvService.getbvByID(Integer.parseInt(id));
+		model.addAttribute("lqt", bv.getLqt());
+		return "recruiter/like_list";
+		
+	}
+	
+	@RequestMapping("user_liked_info")
+	public String showuserlikeInfo(@RequestParam("id") String id, Model model) {
+		NguoiDungEntity nd = ndService.getNguoiDungByID(Integer.parseInt(id));
+		model.addAttribute("ho", nd.getHo());
+		model.addAttribute("ten", nd.getTen());
+		model.addAttribute("phai", nd.isPhai()?"Nam":"Nữ");
+		model.addAttribute("trinhdo", nd.getHsnd().getTdEntity()==null?"Trống":nd.getHsnd().getTdEntity().getNoidung());
+		model.addAttribute("chuyennganh", nd.getHsnd().getNganhEntity()==null?"Trống":nd.getHsnd().getNganhEntity().getNoidung());
+		model.addAttribute("email", nd.getEmail());
+		model.addAttribute("sdt", nd.getSdt());
+		model.addAttribute("mota", nd.getHsnd().getNoidung()==null?"":nd.getHsnd().getNoidung());
+		return "recruiter/user_liked_info";
+		
 	}
 	
 	@RequestMapping("my-post")
@@ -237,7 +263,7 @@ public class recruiterController {
 	}
 	
 	@ModelAttribute("username")
-	public String shoUsername() {
+	public String showUsername() {
 		return tkService.getTKLogin().getUsername();
 	}
 	

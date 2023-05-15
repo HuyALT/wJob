@@ -46,7 +46,7 @@
     }
   }
 
-  function search_active() {
+  function search_active_recruiter() {
     let job_select = document.getElementById("txt-job").textContent;
     let position_select = document.getElementById("txt-position").textContent;
     let formality_select = document.getElementById("txt-formality").textContent;
@@ -56,5 +56,18 @@
 		if (position_select === 'Chọn khu vực') position_select ='';
 		if (formality_select === 'Chọn hình thức') formality_select ='';
       window.location.href = '/wJob/recruiter/search?job='+job_select+'&position='+position_select+'&formality='+formality_select;
+    }
+  }
+  
+  function search_active_job_seeker() {
+    let job_select = document.getElementById("txt-job").textContent;
+    let position_select = document.getElementById("txt-position").textContent;
+    let formality_select = document.getElementById("txt-formality").textContent;
+
+    if (job_select !== 'Chọn ngành nghề' || position_select !== 'Chọn khu vực' || formality_select !== 'Chọn hình thức') {
+		if (job_select === 'Chọn ngành nghề') job_select = '';
+		if (position_select === 'Chọn khu vực') position_select ='';
+		if (formality_select === 'Chọn hình thức') formality_select ='';
+      window.location.href = '/wJob/job_seeker/search?job='+job_select+'&position='+position_select+'&formality='+formality_select;
     }
   }

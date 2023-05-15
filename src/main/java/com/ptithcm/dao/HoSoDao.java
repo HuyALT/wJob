@@ -8,52 +8,42 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.ptithcm.entity.NguoiDungEntity;
+import com.ptithcm.entity.HoSoEntity;
 
-@Repository("NguoiDungDao")
+@Repository("HoSoDao")
 @Transactional
-public class NguoiDungDao {
-	
+public class HoSoDao {
+
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	public boolean addNguoiDung(NguoiDungEntity nd) {
+	public void addHoSo(HoSoEntity hoso) {
 		Session session = sessionFactory.openSession();
 		Transaction t = session.beginTransaction();
 		
 		try {
-			session.save(nd);
+			session.save(hoso);
 			t.commit();
-			return true;
 		} catch (Exception e) {
 			t.rollback();
 			e.printStackTrace();
-			return false;
 		} finally {
 			session.close();
 		}
 	}
 	
-	public boolean changeInfomation(NguoiDungEntity nd) {
+	public void changeHoSo(HoSoEntity hoso) {
 		Session session = sessionFactory.openSession();
 		Transaction t = session.beginTransaction();
 		
 		try {
-			session.merge(nd);
+			session.merge(hoso);
 			t.commit();
-			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
 			t.rollback();
-			return false;
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}
-	}
-	
-	public NguoiDungEntity getNguoiDungbyID(int id) {
-		Session session = sessionFactory.openSession();
-		
-		return session.get(NguoiDungEntity.class, id);
 	}
 }

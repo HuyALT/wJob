@@ -127,4 +127,21 @@ public class BaiVietDao {
 		}
 		return qu.getResultList();
 	}
+	
+	public void add1View(BaiVietEntity bv) {
+		Session session = sessionFactory.openSession();
+		bv.setLuotxem(bv.getLuotxem()+1);
+		Transaction t = session.beginTransaction();
+		
+		try {
+			session.merge(bv);
+			t.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			t.rollback();
+		} finally {
+			session.close();
+		}
+		
+	}
 }

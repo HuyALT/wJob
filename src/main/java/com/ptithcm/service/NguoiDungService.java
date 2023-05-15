@@ -19,4 +19,8 @@ public class NguoiDungService {
 	public boolean changeInfomation(NguoiDungEntity nd) {
 		return dao.changeInfomation(nd);
 	}
+	
+	public NguoiDungEntity getNguoiDungByID(int id) {
+		return dao.getNguoiDungbyID(id);
+	}
 }

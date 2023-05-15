@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ptithcm.entity.HoSoEntity;
 import com.ptithcm.entity.NguoiDungEntity;
 import com.ptithcm.entity.QuyenEntity;
 import com.ptithcm.entity.TaiKhoanEntity;
+import com.ptithcm.service.HoSoService;
 import com.ptithcm.service.NguoiDungService;
 import com.ptithcm.service.QuyenService;
 import com.ptithcm.service.TaiKhoanService;
@@ -33,9 +35,13 @@ public class LoginAndRegister {
 	@Autowired
 	private TaiKhoanService tkService;
 	
+	@Autowired
+	private HoSoService hosoService;
+	
 	public static String username_reg;
 	public static String password_reg;
 	public static int error_code = 100;
+	public static boolean keeplogin = true;
 	
 	
 	@RequestMapping("register")
@@ -92,6 +98,12 @@ public class LoginAndRegister {
 		tk.setTrangthai(true);
 		tkService.Dangky(tk);
 		
+		HoSoEntity hoso = new HoSoEntity();
+		hoso.setNdEntity(nd);
+		
+		if (tk.getQuEntity().getTenQuyen().equals("C")) {
+			hosoService.addHoso(hoso);
+		}
 		
 		return "redirect:/login";
 		
@@ -106,11 +118,28 @@ public class LoginAndRegister {
 			model.addAttribute("error_username", "Tên tài khoản đã tồn tại vui lòng nhập tên khác");
 			error_code = 100;
 		}
+		if (keeplogin) {
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			if (auth!=null)
+			{
+				if (auth.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_A")))
+					return "redirect:/admin";	
+				else
+				if (auth.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_B")))
+					return "redirect:/recruiter";
+				else
+				if (auth.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_C")))
+					return "redirect:/job_seeker";
+				else
+					return "redirect:/404";
+			}
+		}
 		return "login";
 	}
 	
 	@RequestMapping("/logout")
 	public String Logout() {
+		keeplogin = false;
 		return "redirect:/login";
 	}
 	
@@ -119,13 +148,14 @@ public class LoginAndRegister {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if (auth!=null)
 		{
+			keeplogin = true;
 			if (auth.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_A")))
 				return "redirect:/admin";	
 			else
 			if (auth.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_B")))
 				return "redirect:/recruiter";
 			else
-			if (auth.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_B")))
+			if (auth.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_C")))
 				return "redirect:/job_seeker";
 			else
 				return "redirect:/404";

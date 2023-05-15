@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+
+
+/*---------------------------------------
+  CUSTOM PROPERTIES ( VARIABLES )             
+-----------------------------------------*/
+:root {
+  --white-color:                  #FFFFFF;
+  --primary-color:                #38b083;
+  --section-bg-color:             #f5f5f5;
+  --border-color:                 #dee2e6;
+  --dark-color:                   #000000;
+  --grey-color:                   #fcfeff;
+  --title-color:                  #565758;
+  --p-color:                      #717275;
+  --footer-bg-color:              #07262e;
+
+  --body-font-family:             'Roboto', sans-serif;
+
+  --h1-font-size:                 68px;
+  --h2-font-size:                 42px;
+  --h3-font-size:                 36px;
+  --h4-font-size:                 32px;
+  --h5-font-size:                 24px;
+  --h6-font-size:                 22px;
+  --p-font-size:                  18px;
+  --menu-font-size:               18px;
+  --copyright-text-font-size:     16px;
+  --custom-link-font-size:        14px;
+
+  --font-weight-light:            300;
+  --font-weight-normal:           400;
+  --font-weight-bold:             600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    /* border: none; */
+    text-decoration: none;
+}
+
+
+li {
+    list-style: none;
+}
+
+
+/* ******************************************************** TRANG HỒ SƠ********************************************************* */
+.container_block {
+    position: relative;
+    display: flex;
+    left: 0;
+    top: 102px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 102px;
+}
+
+.sidebar {
+    position: sticky;
+    background-color: #fff;
+    top: 10%;
+    bottom: 0;
+    left: 0;
+    height: 80vh;
+    width: 320px;
+    overflow: hidden;
+    transition: 1s;
+    box-shadow: 0 0px 24px -8px rgba(2, 48, 71, 0.2);
+    padding-top: 25px;
+    
+}
+
+
+.sidebar:hover {
+    width: 330px;
+    transition: 1s;
+}
+
+.sidebar a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 16px;
+    color: rgb(85, 83, 83);
+    display: table;
+    padding: 15px; 
+}
+
+.sidebar span {
+    position: relative;
+    /* top: 16px; */
+    margin-left: 10px;
+}
+
+.sidebar .bx {
+    position: relative;
+    /* width: 40px;
+    height: 40px; */
+    /* top: 20px; */
+    top: 3px;
+    font-size: 20px;
+}
+
+.sidebar a:hover {
+    background: #eee;
+}
+
+.sidebar a:hover i{
+    color: #000;
+    transition: 0.5s;
+}
+
+.sidebar-item.active{
+    background-color: #bae2be;
+}
+
+/* ---------------MAIN---------------------- */
+.main-title {
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 12px 24px;
+    background-color: #fff;
+    border-radius: 8px; */
+    margin: auto;
+}
+
+.user-info {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 8px;
+    padding: 12px 24px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding-bottom: 50px;
+    
+}
+
+.user-name {
+    padding-top: 15px;
+}
+
+.user-name span {
+    font-size: 20px; 
+    font-weight: 600; 
+    margin-left: 40px;
+}
+
+.user-info h6 {
+    color: #42b883;
+}
+
+.user-info .input-box {
+    margin-left: 30px;
+    padding: 12px;
+}
+
+.user-info .input-box input {
+    border: none;
+}
+.user-info .input-box label {
+    margin-right: 20px;
+}
+
+
+.user-info .input-box input:focus {
+    border: solid 1px #42b883;
+    padding: 4px;
+    border-radius: 8px;
+
+}
+
+.user-info .input-box textarea {
+    margin-top: 10px;
+    border: solid 1px;
+}
+
+.input-box textarea {
+	padding: 10px;
+}
+
+.user-info .input-box textarea:focus {
+    border: solid 1px #42b883;
+    border-radius: 8px;
+}
+
+.btn-update input[type="submit"] {
+    border: none;
+    background: none;
+    background-color: #ff7f5b;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-update input[type="submit"]:hover {
+    color: #fff;
+    background-color: #605a56;
+}
+
+.detail-employer {
+    position: relative;
+    background-color: #dee2e6;
+    padding: 20px;
+    width: 100%;
+    margin-left: 10px;
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+
+.form-box {
+    position: relative;
+    top: 30px;
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: auto;
+
+}
+
+.form{
+    position: relative;
+    margin-top: 30px;
+    background-color: #dee2e6;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-box .title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+}

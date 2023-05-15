@@ -2,6 +2,7 @@ package com.ptithcm.entity;
 
 import java.sql.Date;
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -86,15 +87,21 @@ public class BaiVietEntity {
 	@JoinColumn(name = "IDTT")
 	private TrangThaiEntity ttEntity;
 
+	@OneToMany(mappedBy = "bvEntity", fetch = FetchType.EAGER)
+	private List<QuanTamBaiVietEntity> lqt;
+	
 	public BaiVietEntity() {
 		super();
 	}
 
 	
 
+
+
 	public BaiVietEntity(int id, String tieude, String noidung, Date ngaybd, Date ngaykt, String diachi, String emaillh,
 			String sdtlh, int luotxem, String loaicv, int mucluong, String vitri, int soluong, int namkn, String khuvuc,
-			String tenct, NguoiDungEntity ndEntity, NganhEntity nganhEntity, TrinhDoEntity tdEntity, TrangThaiEntity ttEntity) {
+			String tenct, NguoiDungEntity ndEntity, NganhEntity nganhEntity, TrinhDoEntity tdEntity,
+			TrangThaiEntity ttEntity, List<QuanTamBaiVietEntity> lqt) {
 		super();
 		this.id = id;
 		this.tieude = tieude;
@@ -116,7 +123,28 @@ public class BaiVietEntity {
 		this.nganhEntity = nganhEntity;
 		this.tdEntity = tdEntity;
 		this.ttEntity = ttEntity;
+		this.lqt = lqt;
 	}
+
+
+
+
+
+	public List<QuanTamBaiVietEntity> getLqt() {
+		return lqt;
+	}
+
+
+
+
+
+	public void setLqt(List<QuanTamBaiVietEntity> lqt) {
+		this.lqt = lqt;
+	}
+
+
+
+
 
 	public int getSoluong() {
 		return soluong;

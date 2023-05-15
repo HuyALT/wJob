@@ -46,4 +46,8 @@ public class BaiVietService {
 	public List<BaiVietEntity> searchWithCon(String nganh, String hinhthuc, String khuvuc) {
 		return dao.searchWithCon(nganh, hinhthuc, khuvuc);
 	}
+	
+	public void add1View(BaiVietEntity bv) {
+		dao.add1View(bv);
+	}
 }
