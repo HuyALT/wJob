@@ -1,6 +1,8 @@
 package com.ptithcm.dao;
 
+import java.nio.charset.Charset;
 import java.util.List;
+import java.util.Random;
 
 import javax.transaction.Transactional;
 
@@ -106,12 +108,46 @@ public class TaiKhoanDao {
 		tk.setPassword(encode.encode(rawpassword));
 		
 		try {
-			session.update(tk);
+			session.merge(tk);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 			e.printStackTrace();
+		} finally {
+			session.close();
 		}
+	}
+	
+	public void ResetPassword(TaiKhoanEntity tk) {
+		Session session = sessionFactory.openSession();
+		Transaction t = session.beginTransaction();
+		
+		int leftLimit = 97; // letter 'a'
+	    int rightLimit = 122; // letter 'z'
+	    int targetStringLength = 10;
+	    Random random = new Random();
+	    StringBuilder buffer = new StringBuilder(targetStringLength);
+	    for (int i = 0; i < targetStringLength; i++) {
+	        int randomLimitedInt = leftLimit + (int) 
+	          (random.nextFloat() * (rightLimit - leftLimit + 1));
+	        buffer.append((char) randomLimitedInt);
+	    }
+	    String genNewPass = buffer.toString();
+		
+		BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
+		
+		tk.setPassword(bcrypt.encode(genNewPass));
+		
+		try {
+			session.merge(tk);
+			t.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			t.rollback();
+		} finally {
+			session.close();
+		}
+		
 		
 		
 	}

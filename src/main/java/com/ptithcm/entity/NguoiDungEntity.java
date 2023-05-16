@@ -65,7 +65,7 @@ public class NguoiDungEntity {
 	
 	@OneToMany(mappedBy = "ndEntity")
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private Collection<QuanTamBaiVietEntity> qtbv;
+	private Collection<UngTuyenEntity> qtbv;
 
 	public NguoiDungEntity() {
 		super();
@@ -73,7 +73,7 @@ public class NguoiDungEntity {
 	
 	public NguoiDungEntity(int id, String ho, String ten, boolean phai, String diachi, Date ngaysinh, String cmnd,
 			String sdt, String email, TaiKhoanEntity tknd, HoSoEntity hsnd, Collection<BaiVietEntity> dsbv,
-			Collection<QuanTamBaiVietEntity> qtbv) {
+			Collection<UngTuyenEntity> qtbv) {
 		super();
 		this.id = id;
 		this.ho = ho;
@@ -90,11 +90,11 @@ public class NguoiDungEntity {
 		this.qtbv = qtbv;
 	}
 
-	public Collection<QuanTamBaiVietEntity> getQtbv() {
+	public Collection<UngTuyenEntity> getQtbv() {
 		return qtbv;
 	}
 
-	public void setQtbv(Collection<QuanTamBaiVietEntity> qtbv) {
+	public void setQtbv(Collection<UngTuyenEntity> qtbv) {
 		this.qtbv = qtbv;
 	}
 

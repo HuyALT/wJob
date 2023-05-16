@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.ptithcm</groupId>
-  <artifactId>wJob</artifactId>
-  <packaging>war</packaging>
-  <properties>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ptithcm</groupId>
+	<artifactId>wJob</artifactId>
+	<packaging>war</packaging>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -12,11 +12,11 @@
 		<spring.security.version>5.0.2.RELEASE</spring.security.version>
 		<jstl.version>1.2</jstl.version>
 	</properties>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>wJob Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-			<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+	<version>0.0.1-SNAPSHOT</version>
+	<name>wJob Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -138,13 +138,23 @@
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>javax.mail-api</artifactId>
-			<version>1.6.2</version>
+			<version>1.5.5</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
 		</dependency>
 		<!-- Spring Security Artifacts - START -->
 		<!-- Spring Security Artifacts - START -->
@@ -223,12 +233,10 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-    
-    
-  </dependencies>
-  <build>
-    <finalName>wJob</finalName>
-    <pluginManagement>
+	</dependencies>
+	<build>
+		<finalName>wJob</finalName>
+		<pluginManagement>
 			<!-- lock down plugins versions to avoid using Maven 
 				defaults (may be moved to parent pom) -->
 			<plugins>
@@ -268,5 +276,5 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-  </build>
+	</build>
 </project>

@@ -25,14 +25,15 @@
             <input type="text" name = "username"  class="input-field" placeholder="Tên Đăng nhập" required autocomplete="off" pattern="[a-zA-Z0-9]{5,}" title="Tên Đăng nhập phải lớn hơn 4 kí tự và không chứa kí tự đặc biệt">
             <input type="password" name = "password"  class="input-field" placeholder="Mật khẩu" required autocomplete="off">
              <span id = "incorect" style="color: red; display: block">${message}</span>
-            <a href="" class="forgot_password">Quên mật khẩu</a>
+            <a href="forget_password" class="forgot_password">Quên mật khẩu</a>
             <button type="submit" class="submit-btn">Đăng nhập</button>
             
             </form>
-            <form action="register" class="form-login" id="register" method="post">
+            <form action="mailconfirm" class="form-login" id="register" method="post">
                 <input type="text" name="username" class="input-field" placeholder="Tên đăng nhập" required autocomplete="off"  pattern="[a-zA-Z0-9]{5,}" title="Tên Đăng nhập phải lớn hơn 4 kí tự và không chứa kí tự đặc biệt">
                 <input type="password" name="password-reg" class="input-field" placeholder="Mật khẩu" required autocomplete="off" >
                 <input type="password" name="confirmpassword" class="input-field" placeholder="Nhập lại mật khẩu" autocomplete="off" required>
+                <input type="email" name="email" class="input-field" placeholder="Email" autocomplete="off" required>
                 <span id="error-text" style="color: red; display: none;">Mật khẩu nhập lại không chính xác</span>
                 <span id="error-username" style="color: red; display: block;">${error_username}</span>
                 <button type="submit" class="submit-btn" id = "btn-dangki" >Đăng ký</button>

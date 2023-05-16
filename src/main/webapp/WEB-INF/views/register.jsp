@@ -50,11 +50,6 @@
                 <input type="text" name="diachi" class="form-register-input-diachi" autocomplete="off">
             </div>
 
-            <div class="form-register-email">
-                <label for="" class="form-register-label-email">Email:</label>
-                <input type="email" name="email" class="form-register-input-email" autocomplete="email">
-            </div>
-
             <div class="form-register-role">
                 <label for="" class="form-register-label-role">Bạn là:</label>
                 <select name="role" class="form-register-role-select">

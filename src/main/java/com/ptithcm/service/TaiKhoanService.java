@@ -46,4 +46,8 @@ public class TaiKhoanService {
 	public void ChangePassword(TaiKhoanEntity tk, String rawpassword) {
 		dao.ChangePassword(tk, rawpassword);
 	}
+	
+	public void ResetTaiKhoan(TaiKhoanEntity tk) {
+		dao.ResetPassword(tk);
+	}
 }

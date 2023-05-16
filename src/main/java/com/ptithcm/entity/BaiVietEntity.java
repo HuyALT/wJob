@@ -88,7 +88,7 @@ public class BaiVietEntity {
 	private TrangThaiEntity ttEntity;
 
 	@OneToMany(mappedBy = "bvEntity", fetch = FetchType.EAGER)
-	private List<QuanTamBaiVietEntity> lqt;
+	private List<UngTuyenEntity> lqt;
 	
 	public BaiVietEntity() {
 		super();
@@ -101,7 +101,7 @@ public class BaiVietEntity {
 	public BaiVietEntity(int id, String tieude, String noidung, Date ngaybd, Date ngaykt, String diachi, String emaillh,
 			String sdtlh, int luotxem, String loaicv, int mucluong, String vitri, int soluong, int namkn, String khuvuc,
 			String tenct, NguoiDungEntity ndEntity, NganhEntity nganhEntity, TrinhDoEntity tdEntity,
-			TrangThaiEntity ttEntity, List<QuanTamBaiVietEntity> lqt) {
+			TrangThaiEntity ttEntity, List<UngTuyenEntity> lqt) {
 		super();
 		this.id = id;
 		this.tieude = tieude;
@@ -130,7 +130,7 @@ public class BaiVietEntity {
 
 
 
-	public List<QuanTamBaiVietEntity> getLqt() {
+	public List<UngTuyenEntity> getLqt() {
 		return lqt;
 	}
 
@@ -138,7 +138,7 @@ public class BaiVietEntity {
 
 
 
-	public void setLqt(List<QuanTamBaiVietEntity> lqt) {
+	public void setLqt(List<UngTuyenEntity> lqt) {
 		this.lqt = lqt;
 	}
 

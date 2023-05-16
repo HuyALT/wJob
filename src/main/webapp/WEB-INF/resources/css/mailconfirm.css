@@ -1,0 +1,40 @@
+.form-check-email {
+    width: 480px;
+    height: 200px;
+    position: relative;
+    background: #fff;
+    margin: 3% auto;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.form-check-email h2 {
+    width: 420px;
+    text-align: center;
+    margin: 0 auto;   
+    margin-top: 20px;
+}
+.input-text-check-email {
+    width: 150px;
+    height: 30px;
+    margin-left: 150px;
+    margin-top: 20px;
+    
+}
+.button-check-email {
+    width: 95px;
+    height: 30px;
+    position: absolute;
+    cursor: pointer;
+    top: 160px;
+    right: 50px;
+    border: none;
+    background: linear-gradient(to right, #a7d7c5,#74b49b);
+    border-radius: 20px;
+}
+#error {
+    position: relative;
+    top: 30px;
+    right: 158px;
+    color: red;
+}

@@ -23,4 +23,8 @@ public class NguoiDungService {
 	public NguoiDungEntity getNguoiDungByID(int id) {
 		return dao.getNguoiDungbyID(id);
 	}
+	
+	public NguoiDungEntity getNguoiDungByEmail(String email) {
+		return dao.getNguoiDungByEmail(email);
+	}
 }

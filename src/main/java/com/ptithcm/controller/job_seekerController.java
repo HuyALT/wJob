@@ -17,14 +17,14 @@ import com.ptithcm.entity.BaiVietEntity;
 import com.ptithcm.entity.HoSoEntity;
 import com.ptithcm.entity.NganhEntity;
 import com.ptithcm.entity.NguoiDungEntity;
-import com.ptithcm.entity.QuanTamBaiVietEntity;
+import com.ptithcm.entity.UngTuyenEntity;
 import com.ptithcm.entity.TaiKhoanEntity;
 import com.ptithcm.entity.TrinhDoEntity;
 import com.ptithcm.service.BaiVietService;
 import com.ptithcm.service.HoSoService;
 import com.ptithcm.service.NganhService;
 import com.ptithcm.service.NguoiDungService;
-import com.ptithcm.service.QuanTamService;
+import com.ptithcm.service.UngTuyenService;
 import com.ptithcm.service.TaiKhoanService;
 import com.ptithcm.service.TrinhDoService;
 
@@ -51,7 +51,7 @@ public class job_seekerController {
 	private NguoiDungService ndService;
 	
 	@Autowired
-	private QuanTamService qtService;
+	private UngTuyenService qtService;
 	
 	public static int errorcode = 100;
 	
@@ -89,9 +89,9 @@ public class job_seekerController {
 		model.addAttribute("Mota", bv.getNoidung());
 		model.addAttribute("idbv", bv.getId());
 		
-		List<QuanTamBaiVietEntity> dsqtbv = qtService.getlistByIDBV(bv.getId());
+		List<UngTuyenEntity> dsqtbv = qtService.getlistByIDBV(bv.getId());
 		
-		QuanTamBaiVietEntity ndqt = dsqtbv.stream().filter(o->o.getNdEntity().equals(tkService.getNDlogin())).findFirst().orElse(null);
+		UngTuyenEntity ndqt = dsqtbv.stream().filter(o->o.getNdEntity().equals(tkService.getNDlogin())).findFirst().orElse(null);
 		
 		if (ndqt!=null) {
 			model.addAttribute("islike", true);

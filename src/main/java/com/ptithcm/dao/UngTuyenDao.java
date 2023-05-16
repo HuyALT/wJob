@@ -13,25 +13,25 @@ import org.springframework.stereotype.Repository;
 
 import com.ptithcm.entity.BaiVietEntity;
 import com.ptithcm.entity.NguoiDungEntity;
-import com.ptithcm.entity.QuanTamBaiVietEntity;
+import com.ptithcm.entity.UngTuyenEntity;
 import com.ptithcm.entity.combinekey.QuanTamBVKey;
 
 @Repository("QuanTamDao")
 @Transactional
-public class QuanTamDao {
+public class UngTuyenDao {
 
 	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	public List<QuanTamBaiVietEntity> getlist() {
+	public List<UngTuyenEntity> getlist() {
 		Session session = sessionFactory.openSession();
 		String hql = "FROM QuanTamBaiVietEntity";
 		Query qu  = session.createQuery(hql);
 		return qu.getResultList();
 	}
 	
-	public List<QuanTamBaiVietEntity> getlistbyIDBV(int id) {
+	public List<UngTuyenEntity> getlistbyIDBV(int id) {
 		Session session = sessionFactory.openSession();
 		String hql = "FROM QuanTamBaiVietEntity WHERE key.idbv=:id";
 		Query qu  = session.createQuery(hql);
@@ -43,7 +43,7 @@ public class QuanTamDao {
 		Session session = sessionFactory.openSession();
 		Transaction t = session.beginTransaction();
 		
-		QuanTamBaiVietEntity qtbv = new QuanTamBaiVietEntity();
+		UngTuyenEntity qtbv = new UngTuyenEntity();
 		QuanTamBVKey key = new QuanTamBVKey();
 		
 		key.setIdbv(bv.getId());

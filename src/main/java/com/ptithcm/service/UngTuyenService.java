@@ -5,18 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ptithcm.dao.QuanTamDao;
+import com.ptithcm.dao.UngTuyenDao;
 import com.ptithcm.entity.BaiVietEntity;
 import com.ptithcm.entity.NguoiDungEntity;
-import com.ptithcm.entity.QuanTamBaiVietEntity;
+import com.ptithcm.entity.UngTuyenEntity;
 
 @Service
-public class QuanTamService {
+public class UngTuyenService {
 	
 	@Autowired
-	private QuanTamDao dao;
+	private UngTuyenDao dao;
 	
-	public List<QuanTamBaiVietEntity> getlist() {
+	public List<UngTuyenEntity> getlist() {
 		return dao.getlist();
 	}
 	
@@ -24,7 +24,7 @@ public class QuanTamService {
 		dao.addlike(bv, nd);
 	}
 	
-	public List<QuanTamBaiVietEntity> getlistByIDBV(int id) {
+	public List<UngTuyenEntity> getlistByIDBV(int id) {
 		return dao.getlistbyIDBV(id);
 	}
 	

@@ -11,8 +11,8 @@ import javax.persistence.Table;
 import com.ptithcm.entity.combinekey.QuanTamBVKey;
 
 @Entity
-@Table(name = "QUAN_TAM_BV")
-public class QuanTamBaiVietEntity {
+@Table(name = "UNGTUYEN")
+public class UngTuyenEntity {
 	
 	@EmbeddedId
 	private QuanTamBVKey key;
@@ -27,11 +27,11 @@ public class QuanTamBaiVietEntity {
 	@JoinColumn(name = "IDND")
 	private NguoiDungEntity ndEntity;
 
-	public QuanTamBaiVietEntity() {
+	public UngTuyenEntity() {
 		super();
 	}
 
-	public QuanTamBaiVietEntity(QuanTamBVKey key, BaiVietEntity bvEntity, NguoiDungEntity ndEntity) {
+	public UngTuyenEntity(QuanTamBVKey key, BaiVietEntity bvEntity, NguoiDungEntity ndEntity) {
 		super();
 		this.key = key;
 		this.bvEntity = bvEntity;
