@@ -1,7 +1,14 @@
+#search-id {
+	border-radius: 30px;
+	width: 310px;
+	margin-top: 20px;
+}
+
 .table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    margin-top: 30px;
 }
 
 .table-header, .table-data {
@@ -18,7 +25,8 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #04AA6D;
+    background-color: #393e46;
+    color: #fff;
 }
 
 #account-status{
@@ -31,10 +39,10 @@
     color: white;
 }
 .Enable {
-	background-color: #006400;
+	background-color: #379956;
 }
 .Disable {
-	background-color: #8b0000;
+	background-color: #f57b51;
 }
 
 .search-table {

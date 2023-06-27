@@ -41,7 +41,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/wJob/job_seeker/my-info"><i class="bx bxs-user"></i>${username}</a>
                     </li>
-
+					
+					<li class="nav-item">
+                        <a class="nav-link" href="/wJob/job_seeker/suggest_for_you">Gợi ý cho bạn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/wJob/job_seeker/liked_post">Bài viết đã ứng tuyển</a>
+                    </li>
                 </ul>
             </div>
         </div>

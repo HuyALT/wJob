@@ -1,22 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jstl/core_rt"  prefix="c"%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="<c:url value = '/resources/css/main.css'/>">
-    <title>Trang chủ</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="<c:url value = '/resources/css/main.css'/>">
+<title>Gợi ý cho bạn</title>
 </head>
 <body>
-    <div class="contain">
-    	<%@include file="/WEB-INF/views/recruiter/header.jsp" %>
+	<div class="contain">
+    	<%@include file="/WEB-INF/views/job_seeker/header.jsp" %>
 		<main>
+		<h1 style="text-align: center;padding-top: inherit;">${lbvliked.size()>0?'':'Bạn chưa ứng tuyển công việc nào'}</h1>
         <section id="section-list">
             <div class="jobs-list-container">
                 <div class="jobs">
-                <c:forEach var="bv" items="${lmybv}">
-                    <div class="job">
+                <c:forEach var="bv" items="${lbvliked}">
+                    <div class="job" onclick="window.location.href='/wJob/job_seeker/job_info?id=${bv.id}'">
                         <h2 class="job-title">${bv.tieude}</h2>
                         <a class="company-name">${bv.tenct }</a>
                         <span class="salary"><i class="bx bx-money"></i>${bv.mucluong }</span>
@@ -24,9 +25,6 @@
                         <div class="level">Trình độ: ${bv.tdEntity.noidung }</div>
                         <div class="quantity">Số lượng: ${bv.soluong}</div>
                         <div class="date">Hạn nôp hồ sơ: ${bv.ngaykt }</div>
-                        <div class="status" style="${bv.ttEntity.id==2?'color: green;':'color: red;'}">${bv.ttEntity.tentt}</div>
-                         <a class = "like" href="like-list?id=${bv.id}" style="${bv.ttEntity.id==2?'display: block;':'display: none;'}">Ứng tuyển: ${bv.lqt.size()}</a>
-                        <a class = "lockpost" href="lock?id=${bv.id}" style="${bv.ttEntity.id==2||bv.ttEntity.id==1?'display: block;':'display: none;'}">Nhấn để khóa bài viết</a>
                     </div>
                   </c:forEach>                   
                 </div>
@@ -35,10 +33,9 @@
                 <ul class="pagination pagination-md justify-content-center">
                   </ul>
             </div>
-            
         </section>
 		</main>
-		<%@include file = "/WEB-INF/views/recruiter/footter.jsp" %>
+		<%@include file = "/WEB-INF/views/job_seeker/footter.jsp" %>
 		<script type="text/javascript" src="<c:url value = "/resources/js/pagination.js"/>"></script>
     </div>
 </body>

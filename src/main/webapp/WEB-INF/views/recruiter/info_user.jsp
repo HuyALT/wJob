@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet"
-	href="<c:url value = '/resources/css/recruiter/user_info.css'/>">
+	href="<c:url value = '/resources/css/user_info.css'/>">
 <title>Thông tin của bạn</title>
 </head>
 <body>

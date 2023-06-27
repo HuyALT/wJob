@@ -26,14 +26,14 @@ public class UngTuyenDao {
 	
 	public List<UngTuyenEntity> getlist() {
 		Session session = sessionFactory.openSession();
-		String hql = "FROM QuanTamBaiVietEntity";
+		String hql = "FROM UngTuyenEntity";
 		Query qu  = session.createQuery(hql);
 		return qu.getResultList();
 	}
 	
 	public List<UngTuyenEntity> getlistbyIDBV(int id) {
 		Session session = sessionFactory.openSession();
-		String hql = "FROM QuanTamBaiVietEntity WHERE key.idbv=:id";
+		String hql = "FROM UngTuyenEntity WHERE key.idbv=:id";
 		Query qu  = session.createQuery(hql);
 		qu.setParameter("id", id);
 		return qu.getResultList();

@@ -67,7 +67,8 @@ public class LoginAndRegister {
 	}
 	
 	@RequestMapping(value = "mailconfirm", method = RequestMethod.POST)
-	public String addInformation(@RequestParam("username") String username, @RequestParam("password-reg") String password, Model model, @RequestParam("email") String email) {
+	public String addInformation(@RequestParam("username") String username, @RequestParam("password-reg")
+	String password, Model model, @RequestParam("email") String email) {
 		username_reg = username;
 		password_reg = password;
 		email_reg = email;
@@ -129,22 +130,22 @@ public class LoginAndRegister {
 	
 	
 	@RequestMapping(value = "NewAccount", method = RequestMethod.POST)
-	public String registerNewAccount(@RequestParam("ho") String ho, @RequestParam("ten") String ten, @RequestParam("gioitinh") String gioitinh, @RequestParam("ngaysinh") String ngaysinh,
-			@RequestParam("sdt") String sdt, @RequestParam("cmnd") String cmnd, @RequestParam("diachi") String diachi, @RequestParam("role") String role) {
+	public String registerNewAccount(@RequestParam("ho") String ho, @RequestParam("ten") String ten, 
+			@RequestParam("gioitinh") String gioitinh, @RequestParam("ngaysinh") String ngaysinh,
+			@RequestParam("sdt") String sdt, @RequestParam("cmnd") String cmnd,
+			@RequestParam("diachi") String diachi, @RequestParam("role") String role) {
 		
 		TaiKhoanEntity tk  = new TaiKhoanEntity();
 		BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
 		String passencode = bcrypt.encode(password_reg);
 		tk.setPassword(passencode);
 		tk.setUsername(username_reg);
-		
 		if (role.compareTo("0") == 0) {
 			tk.setQuEntity(quService.getRoleB());
 		}
 		else {
 			tk.setQuEntity(quService.getRoleC());
 		}
-		
 		NguoiDungEntity nd = new NguoiDungEntity();
 		nd.setHo(ho);
 		nd.setTen(ten);
@@ -191,7 +192,7 @@ public class LoginAndRegister {
 		email_reg = email;
 		if (nd == null) {
 			error_code = 111;
-			return "redirect:/forget_pass_email.jsp";
+			return "redirect:/forget_password";
 		}
 		try {
 			sendMail();

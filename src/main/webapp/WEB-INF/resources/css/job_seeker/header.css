@@ -236,13 +236,21 @@ strong {
 }
 
 .navbar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 15px;
   padding-bottom: 15px;
   transition: background 0.3s ease-out;
-  background-color: white;
+  background-color: #9ed9c5;
   border-left-style: 5px;
   border-color: black;
+}
+
+.navbar-brand {
+  font-size: 36px!important;
+  color: var(--dark-color);
+}
+
+.nav-item .bxs-user {
+	margin-right: 5px;
 }
 
 .sticky-nav {
@@ -269,7 +277,7 @@ strong {
 }
 
 .navbar-nav .nav-link {
-  color: gray;
+  color: #000;
   font-size: var(--menu-font-size);
   font-weight: var(--font-weight-normal);
   padding-top: 15px;

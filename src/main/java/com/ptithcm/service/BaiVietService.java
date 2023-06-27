@@ -50,4 +50,8 @@ public class BaiVietService {
 	public void add1View(BaiVietEntity bv) {
 		dao.add1View(bv);
 	}
+	
+	public List<BaiVietEntity> selectTop3(String nganh, int exid){
+		return dao.selectTop3(nganh, exid);
+	}
 }

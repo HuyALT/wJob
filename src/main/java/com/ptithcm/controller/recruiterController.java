@@ -74,9 +74,12 @@ public class recruiterController {
 	}
 	
 	@RequestMapping("/post")
-	public String Addpost(@RequestParam("tieude") String tieude, @RequestParam("tenct") String tenct, @RequestParam("date") String date, @RequestParam("namkn") String namkn,
-			@RequestParam("luong") String luong, @RequestParam("hinhthuc") String hinhthuc, @RequestParam("vitri") String vitri, @RequestParam("soluong") String soluong,
-			@RequestParam("trinhdo") String trinhdo, @RequestParam("khuvuc") String khuvuc, @RequestParam("mota") String mota, @RequestParam("diachi") String diachi, @RequestParam("nganh") String nganh,
+	public String Addpost(@RequestParam("tieude") String tieude, @RequestParam("tenct") String tenct, 
+			@RequestParam("date") String date, @RequestParam("namkn") String namkn,
+			@RequestParam("luong") String luong, @RequestParam("hinhthuc") String hinhthuc,
+			@RequestParam("vitri") String vitri, @RequestParam("soluong") String soluong,
+			@RequestParam("trinhdo") String trinhdo, @RequestParam("khuvuc") String khuvuc,
+			@RequestParam("mota") String mota, @RequestParam("diachi") String diachi, @RequestParam("nganh") String nganh,
 			@RequestParam("email") String email, @RequestParam("sdt") String sdt) {
 		TrangThaiEntity tt = ttService.getID1();
 		NguoiDungEntity nd = tkService.getNDlogin();
@@ -118,6 +121,12 @@ public class recruiterController {
 		
 	}
 	
+	@RequestMapping("lock")
+	public String lockBV(@RequestParam("id") String id) {
+		bvService.setTrangThai(bvService.getbvByID(Integer.parseInt(id)), ttService.getID4());
+		return "redirect:/recruiter/my-post";
+	}
+	
 	@RequestMapping("user-info")
 	public String userInfo(Model model) {
 		model.addAttribute("ho", tkService.getNDlogin().getHo());
@@ -149,7 +158,8 @@ public class recruiterController {
 	}
 	
 	@RequestMapping(value = "changepassword", method = RequestMethod.POST)
-	public String changePassword(@RequestParam("old-pass") String old_pass, @RequestParam("new-pass") String new_pass, @RequestParam("confirm-pass") String confirm_pass, Model model) {
+	public String changePassword(@RequestParam("old-pass") String old_pass, 
+			@RequestParam("new-pass") String new_pass, @RequestParam("confirm-pass") String confirm_pass, Model model) {
 		BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
 		TaiKhoanEntity tk = tkService.getTKLogin();
 		
@@ -169,7 +179,8 @@ public class recruiterController {
 	
 	@RequestMapping(value = "changeinfo", method = RequestMethod.POST)
 	public String changeinfo(@RequestParam("ho") String ho, @RequestParam("ten") String ten, @RequestParam("cmnd") String cmnd,
-			@RequestParam("sdt") String sdt, @RequestParam("ngaysinh") String ngaysinh, @RequestParam("diachi") String diachi, @RequestParam("phai") String phai) {
+			@RequestParam("sdt") String sdt, @RequestParam("ngaysinh") String ngaysinh,
+			@RequestParam("diachi") String diachi, @RequestParam("phai") String phai) {
 		NguoiDungEntity nd = tkService.getNDlogin();
 		nd.setHo(ho);
 		nd.setTen(ten);
@@ -260,6 +271,11 @@ public class recruiterController {
 	@ModelAttribute("lng")
 	public List<NganhEntity> listNganh() {
 		return nganhService.getlist();
+	}
+	
+	@ModelAttribute("ltd")
+	public List<TrinhDoEntity> listTrinhdo() {
+		return tdService.getlist();
 	}
 	
 	@ModelAttribute("username")

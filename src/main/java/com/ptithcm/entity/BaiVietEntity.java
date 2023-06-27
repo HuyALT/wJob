@@ -94,9 +94,6 @@ public class BaiVietEntity {
 		super();
 	}
 
-	
-
-
 
 	public BaiVietEntity(int id, String tieude, String noidung, Date ngaybd, Date ngaykt, String diachi, String emaillh,
 			String sdtlh, int luotxem, String loaicv, int mucluong, String vitri, int soluong, int namkn, String khuvuc,

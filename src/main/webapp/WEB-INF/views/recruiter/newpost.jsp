@@ -12,7 +12,7 @@
 	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="assets/css/login-signup-forget.css">
-<title>Login</title>
+<title>Tạo bài đăng</title>
 </head>
 <body>
 	<div class="contain">

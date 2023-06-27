@@ -85,5 +85,6 @@
     <script type="text/javascript" src="<c:url value = "/resources/vendors/jquery/jquery.min.js" />"></script>
     <script type="text/javascript" src="<c:url value = "/resources/vendors/jquery/jquery.backstretch.min.js" />"></script>
     <script type="text/javascript" src="<c:url value = "/resources/vendors/jquery/jquery.twbsPagination.min.js" />"></script>
+    <noscript>Your browser does not support JavaScript!</noscript>
 </body>
 </html>

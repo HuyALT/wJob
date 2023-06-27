@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="<c:url value = '/resources/css/recruiter/main.css'/>">
+    <link rel="stylesheet" href="<c:url value = '/resources/css/main.css'/>">
     <title>Trang chủ</title>
 </head>
 <body>

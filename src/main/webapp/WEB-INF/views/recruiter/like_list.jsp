@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<c:url value = '/resources/css/recruiter/list_user.css'/>">
-    <title>Trang chủ</title>
+    <title>Danh sách người ứng tuyển</title>
 </head>
 <body>
     <div class="contain">

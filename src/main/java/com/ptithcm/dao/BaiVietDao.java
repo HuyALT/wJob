@@ -1,5 +1,6 @@
 package com.ptithcm.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -79,7 +80,7 @@ public class BaiVietDao {
 		bvht.setTtEntity(tt);
 		
 		try {
-			session.update(bvht);
+			session.merge(bvht);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -126,6 +127,26 @@ public class BaiVietDao {
 			qu.setParameter("khuvuc",khuvuc);
 		}
 		return qu.getResultList();
+	}
+	
+	public List<BaiVietEntity> selectTop3(String nganh, int exceptid){
+		Session session = sessionFactory.openSession();
+		String hql = "FROM BaiVietEntity WHERE ttEntity.id=2 AND nganhEntity.noidung = :nganh AND id!=:exid ORDER BY ngaykt DESC";
+		Query qu = session.createQuery(hql);
+		qu.setParameter("nganh", nganh);
+		qu.setParameter("exid", exceptid);
+		
+		List<BaiVietEntity> lres = qu.getResultList();
+		
+		List<BaiVietEntity> lt3 = new ArrayList<>();
+		if (lres.size()>3) {
+			lt3.add(lres.get(0));
+			lt3.add(lres.get(1));
+			lt3.add(lres.get(2));
+			return lt3;
+		}
+		
+		return lres;
 	}
 	
 	public void add1View(BaiVietEntity bv) {

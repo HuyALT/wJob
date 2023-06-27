@@ -18,3 +18,9 @@ function hidden_message() {
 function alert_changepass() {
 	alert("Đổi mật khẩu thành công")
 }
+var sdt = document.getElementsByName("sdt")[0];
+sdt.addEventListener("keypress",function(event) {
+	if (event.charCode < 48 || event.charCode >57) {
+		event.preventDefault();
+	}
+})

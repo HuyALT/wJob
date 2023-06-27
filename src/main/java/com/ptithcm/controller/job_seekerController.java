@@ -2,6 +2,8 @@ package com.ptithcm.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,13 +93,24 @@ public class job_seekerController {
 		
 		List<UngTuyenEntity> dsqtbv = qtService.getlistByIDBV(bv.getId());
 		
-		UngTuyenEntity ndqt = dsqtbv.stream().filter(o->o.getNdEntity().equals(tkService.getNDlogin())).findFirst().orElse(null);
-		
+		UngTuyenEntity ndqt = dsqtbv.stream().filter(o->o.getNdEntity().getId()==tkService.getNDlogin().getId()).findFirst().orElse(null);
+		Date now = new Date();
+	
 		if (ndqt!=null) {
-			model.addAttribute("islike", true);
-		}else {
 			model.addAttribute("islike", false);
+			model.addAttribute("text","Đã ứng tuyển");
+		}else
+		if (bv.getNgaykt().compareTo(now)<0) {
+				model.addAttribute("text","Đã hết hạn");
+				model.addAttribute("islike", false);
 		}
+		else
+		{
+			model.addAttribute("islike", true);
+			model.addAttribute("text","Ứng tuyển");
+		}
+		
+		model.addAttribute("lbvt3", bvService.selectTop3(bv.getNganhEntity().getNoidung(), bv.getId()));
 		
 		return "job_seeker/post_info";
 	}
@@ -138,6 +151,8 @@ public class job_seekerController {
 			model.addAttribute("smessage", "Thay đổi đã được ghi nhận");
 		}
 		
+		
+		
 		return "job_seeker/account_info";
 	}
 	
@@ -157,7 +172,8 @@ public class job_seekerController {
 	}
 	
 	@RequestMapping("changeportfolio")
-	public String changePortfolio(@RequestParam("trinhdo") String td, @RequestParam("chuyennganh") String cn, @RequestParam("mota") String mota) {
+	public String changePortfolio(@RequestParam("trinhdo") String td,
+			@RequestParam("chuyennganh") String cn, @RequestParam("mota") String mota) {
 		HoSoEntity hs = tkService.getNDlogin().getHsnd();
 		if (td.equals("0")) {
 			hs.setTdEntity(null);
@@ -225,6 +241,29 @@ public class job_seekerController {
 		errorcode = 102;
 		
 		return "redirect:/job_seeker/account-center";
+	}
+	
+	@RequestMapping("suggest_for_you")
+	public String suggest(Model model) {
+		NguoiDungEntity nd = tkService.getNDlogin();
+		
+		HoSoEntity hs = nd.getHsnd();
+		if (hs.getNganhEntity() == null || hs.getTdEntity() == null) {
+			return "job_seeker/Nosuggest";
+		}
+		model.addAttribute("lbvsuggest", bvService.searchWithCon(hs.getNganhEntity().getNoidung(), "", ""));
+		return "job_seeker/suggest";
+		
+	}
+	
+	@RequestMapping("liked_post")
+	public String likedpost(Model model) {
+		NguoiDungEntity nd = tkService.getNDlogin();
+		List<BaiVietEntity> lbv = new ArrayList<>();
+		nd.getQtbv().stream().forEach(o->lbv.add(o.getBvEntity()));
+		
+		model.addAttribute("lbvliked", lbv);
+		return "job_seeker/liked_post";
 	}
 	
 	@ModelAttribute("ltd")

@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet"
-	href="<c:url value = '/resources/css/recruiter/post_info.css'/>">
+	href="<c:url value = '/resources/css/post_info.css'/>">
+<link rel="stylesheet" href="<c:url value = '/resources/css/main.css'/>">
 <title>Trang Chủ</title>
 </head>
 <body>
@@ -70,7 +71,7 @@
 						</div>
 					</div>
 					<div class="btn-submit">
-                        <button onclick="window.location.href='/wJob/job_seeker/like?id=${idbv}';alert('Ứng tuyển thành công');" ${islike?'':'disabled'}>${islike?'Ứng tuyển':'Đã ứng tuyển' }</button>
+                        <button onclick="window.location.href='/wJob/job_seeker/like?id=${idbv}';alert('Ứng tuyển thành công');" ${islike?'':'disabled'}>${text}</button>
                     </div>
 				</div>
 				<div class="desc-container">
@@ -78,6 +79,24 @@
 					<p class="desc">${Mota }</p>
 				</div>
 			</div>
+			<h3 style="text-align: center;" >Các công việc khác có liên quan</h3>
+			<section id="section-list">
+            <div class="jobs-list-container">
+                <div class="jobs">
+                <c:forEach var="bv" items="${lbvt3}">
+                    <div class="job" onclick="window.location.href='/wJob/job_seeker/job_info?id=${bv.id}'">
+                        <h2 class="job-title">${bv.tieude}</h2>
+                        <a class="company-name">${bv.tenct }</a>
+                        <span class="salary"><i class="bx bx-money"></i>${bv.mucluong }</span>
+                        <span class="position"><i class="bx bx-map"></i>${bv.khuvuc }</span>
+                        <div class="level">Trình độ: ${bv.tdEntity.noidung }</div>
+                        <div class="quantity">Số lượng: ${bv.soluong}</div>
+                        <div class="date">Hạn nôp hồ sơ: ${bv.ngaykt }</div>
+                    </div>
+                  </c:forEach>                   
+                </div>
+            </div>
+            </section>
 	</div>
 	</main>
 	<%@include file="/WEB-INF/views/recruiter/footter.jsp"%>

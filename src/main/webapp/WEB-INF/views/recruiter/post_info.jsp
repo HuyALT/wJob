@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet"
-	href="<c:url value = '/resources/css/recruiter/post_info.css'/>">
+	href="<c:url value = '/resources/css/post_info.css'/>">
 <title>Trang Chủ</title>
 </head>
 <body>
