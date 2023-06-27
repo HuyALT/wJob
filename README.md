@@ -9,4 +9,4 @@
 - bootstrap
 - jQuery
 
-#### [Chi tiết] (https://drive.google.com/file/d/18kuha-f2bwr_SPHSgDB7107nHXJ7R4bg/view?usp=sharing)
+#### [Chi tiết](https://docs.google.com/document/d/1M6A_2SXPZfvKQ8SG7ZmEeD5WzZojxCD-/edit?usp=sharing&ouid=111851173498295885678&rtpof=true&sd=true)
